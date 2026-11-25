@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand Theft Auto VI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080810;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#080810cc, transparent);
+}
+
+.logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #ff83c8;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ff83c8;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background:
+    linear-gradient(0deg, #080810 0%, transparent 65%),
+    linear-gradient(90deg, #180b32aa, #ff65a455),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=90')
+    center/cover;
+}
+
+.hero h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(65px, 12vw, 150px);
+    line-height: .95;
+    letter-spacing: 5px;
+    color: #ff9bd6;
+    text-shadow: 0 5px 35px #ff36b8aa;
+}
+
+.hero p {
+    margin-top: 25px;
+    letter-spacing: 7px;
+    font-size: 14px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 19px 42px;
+    background: linear-gradient(90deg, #ff55a8, #a855f7);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: .3s;
+    box-shadow: 0 0 30px #ff55a866;
+}
+
+.button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 45px #ff55aacc;
+}
+
+.section {
+    padding: 110px 9%;
+}
+
+.section h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(40px, 7vw, 75px);
+    color: #ff83c8;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.section p {
+    color: #c6c3d0;
+    line-height: 1.9;
+    max-width: 750px;
+    font-size: 16px;
+}
+
+.city {
+    min-height: 650px;
+    background:
+    linear-gradient(90deg, #080810 0%, transparent 100%),
+    url('https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=1800&q=90')
+    center/cover;
+    display: flex;
+    align-items: center;
+}
+
+.characters {
+    background: #11101d;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.character {
+    min-height: 380px;
+    display: flex;
+    align-items: end;
+    padding: 30px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.character:hover {
+    transform: translateY(-8px);
+}
+
+.jason {
+    background-image: linear-gradient(0deg, #080810, transparent 75%),
+    url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85');
+}
+
+.lucia {
+    background-image: linear-gradient(0deg, #080810, transparent 75%),
+    url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85');
+}
+
+.character h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+.gallery {
+    background: #080810;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: .4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.025);
+}
+
+.preorder {
+    text-align: center;
+    padding: 130px 20px;
+    background: linear-gradient(135deg, #251044, #a52d78, #211044);
+}
+
+.preorder h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(45px, 8vw, 90px);
+    letter-spacing: 3px;
+}
+
+.preorder p {
+    margin-top: 15px;
+    color: #f5d9ed;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #777;
+    font-size: 12px;
+    background: #050509;
+}
+
+@media(max-width: 700px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 9px;
+        font-size: 9px;
+    }
+
+    .character-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character {
+        min-height: 320px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GTA VI</div>
+    <nav>
+        <a href="#story">ИГРА</a>
+        <a href="#characters">ПЕРСОНАЖИ</a>
+        <a href="#gallery">ГАЛЕРЕЯ</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>GRAND<br>THEFT AUTO VI</h1>
+    <p>WELCOME TO VICE CITY</p>
+    <a class="button" href="https://www.rockstargames.com/VI" target="_blank">
+        ОФИЦИАЛЬНЫЙ САЙТ ROCKSTAR
+    </a>
+</section>
+
+<section class="section city" id="story">
+    <div>
+        <h2>WELCOME TO LEONIDA</h2>
+        <p>
+            Добро пожаловать в Леониду — место, где солнце светит ярче,
+            ночная жизнь никогда не заканчивается, а за каждым углом
+            начинается новая история.
+            Исследуй улицы Вайс-Сити и огромный мир GTA VI.
+        </p>
+    </div>
+</section>
+
+<section class="section characters" id="characters">
+    <h2>THE CHARACTERS</h2>
+    <p>Познакомься с главными героями новой истории.</p>
+
+    <div class="character-grid">
+        <div class="character jason">
+            <h3>JASON</h3>
+        </div>
+
+        <div class="character lucia">
+            <h3>LUCIA</h3>
+        </div>
+    </div>
+</section>
+
+<section class="section gallery" id="gallery">
+    <h2>VICE CITY</h2>
+    <p>Атмосфера города, который никогда не спит.</p>
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85" alt="Ночной город">
+        <img src="https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=1000&q=85" alt="Город у моря">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85" alt="Пляж">
+        <img src="https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?auto=format&fit=crop&w=1000&q=85" alt="Ночной город">
+    </div>
+</section>
+
+<section class="preorder">
+    <h2>THE NEXT CHAPTER</h2>
+    <p>Твоя история в Леониде начинается здесь.</p>
+
+    <a class="button" href="https://www.rockstargames.com/VI" target="_blank">
+        VISIT ROCKSTAR GAMES
+    </a>
+</section>
+
+<footer>
+    FAN-MADE WEBSITE · NOT AN OFFICIAL ROCKSTAR GAMES WEBSITE
+    <br><br>
+    GRAND THEFT AUTO VI © ROCKSTAR GAMES
+</footer>
+
+</body>
+</html>
